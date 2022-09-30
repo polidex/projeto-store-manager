@@ -7,7 +7,9 @@ const listProducts = async (_req, res) => {
 
 const listProductsById = async (req, res) => {
   const { id } = req.params;
+
   const productsListById = await productsService.getDbProductsById(id);
+
   if (productsListById.length === 0) {
     return res.status(404).json({ message: 'Product not found' });
   }
@@ -16,6 +18,7 @@ const listProductsById = async (req, res) => {
 
 const addProducts = async (req, res) => {
   const { name } = req.body;
+  
   const productsAdd = await productsService.postDbProducts(name);
   return res.status(201).json({ id: productsAdd.insertId, name });
 };
