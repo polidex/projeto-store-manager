@@ -4,18 +4,13 @@
     "colId": "history",
     "containerId": "",
     "name": "store_manager",
-    "url": "http://localhost:3000/products/22",
-    "method": "PUT",
+    "url": "http://localhost:3000/products/1",
+    "method": "DELETE",
     "sortNum": 0,
     "created": "2022-09-22T18:41:47.289Z",
-    "modified": "2022-10-01T17:11:05.891Z",
+    "modified": "2022-10-01T19:57:21.511Z",
     "headers": [],
     "params": [],
-    "body": {
-      "type": "json",
-      "raw": "{\n  \"name\": \"Martelo do Batman\"\n}",
-      "form": []
-    },
     "tests": []
   }
 ]

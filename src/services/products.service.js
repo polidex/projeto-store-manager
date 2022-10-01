@@ -20,9 +20,15 @@ const putDbProductsById = async (id, name) => {
   return result;
 };
 
+const deleteDbProductsById = async (id) => {
+  const result = await productsModel.deleteDbProducts(id);
+  return result;
+};
+
 module.exports = {
   getDbProducts,
   getDbProductsById,
   postDbProducts,
   putDbProductsById,
+  deleteDbProductsById,
 };
