@@ -15,8 +15,14 @@ const postDbProducts = async (name) => {
   return result;
 };
 
+const putDbProductsById = async (id, name) => {
+  const result = await productsModel.updateDbProducts(id, name);
+  return result;
+};
+
 module.exports = {
   getDbProducts,
   getDbProductsById,
   postDbProducts,
+  putDbProductsById,
 };
