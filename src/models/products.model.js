@@ -30,10 +30,17 @@ const deleteDbProducts = async (id) => {
   return result[0];
 };
 
+const readDbProductsByName = async (name) => {
+  const query = `SELECT * FROM StoreManager.products WHERE LOWER(name) LIKE '%${name}%'`;
+  const result = await connection.execute(query);
+  return result[0];
+};
+
 module.exports = {
   readDbProducts,
   readDbProductsById,
   createDbProducts,
   updateDbProducts,
   deleteDbProducts,
+  readDbProductsByName,
 };

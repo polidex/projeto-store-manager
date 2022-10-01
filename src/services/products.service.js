@@ -25,10 +25,16 @@ const deleteDbProductsById = async (id) => {
   return result;
 };
 
+const getDbProductsByName = async (name) => {
+  const result = await productsModel.readDbProductsByName(name);
+  return result;
+};
+
 module.exports = {
   getDbProducts,
   getDbProductsById,
   postDbProducts,
   putDbProductsById,
   deleteDbProductsById,
+  getDbProductsByName,
 };

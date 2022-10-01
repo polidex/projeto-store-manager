@@ -4,6 +4,8 @@ const nameValidator = require('../middlewares/nameValidator');
 
 const productsRouter = express.Router();
 
+productsRouter.get('/search', productsController.searchProducts);
+
 productsRouter.get('/', productsController.listProducts);
 
 productsRouter.post('/', nameValidator, productsController.addProducts);
