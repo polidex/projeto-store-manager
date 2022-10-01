@@ -1,4 +1,4 @@
-const connection = require('../db/connection');
+/* const connection = require('../db/connection');
 
 const createSales = async () => {
   const query = 'INSERT INTO StoreManager.sales (date) VALUE (NOW())';
@@ -18,4 +18,4 @@ const createSalesProducts = async (sales, newSaleId) => {
 module.exports = {
   createSales,
   createSalesProducts,
-};
+}; */

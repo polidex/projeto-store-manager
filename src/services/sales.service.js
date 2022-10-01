@@ -1,4 +1,4 @@
-const productsModel = require('../models/products.model');
+/* const productsModel = require('../models/products.model');
 const salesModel = require('../models/sales.model');
 
 const hasProductDb = async (sales) => {
@@ -23,4 +23,4 @@ const postDbSales = async (sale) => {
 
 module.exports = {
   postDbSales,
-};
+}; */

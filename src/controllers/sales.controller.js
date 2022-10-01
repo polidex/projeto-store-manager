@@ -1,4 +1,4 @@
-const salesService = require('../services/sales.service');
+/* const salesService = require('../services/sales.service');
 
 const addSales = async (req, res) => {
   const sales = req.body;
@@ -11,4 +11,4 @@ const addSales = async (req, res) => {
 
 module.exports = {
   addSales,
-};
+}; */
