@@ -23,4 +23,24 @@ describe('Testes unitarios do endpoint "/products" camada model', () => {
     const result = await productsModel.readDbProductsById(1);
     expect(result[0]).to.deep.equal({ id: 1, name: 'Martelo de Thor' });
   });
+
+  it('Testando a função createDbProducts', async () => {
+    const result = await productsModel.createDbProducts('Martelo de Thor');
+    expect(result[0]).to.deep.equal({ id: 1, name: 'Martelo de Thor' });
+  });
+
+  it('Testando a função updateDbProducts', async () => {
+    const result = await productsModel.updateDbProducts('Martelo de Thor');
+    expect(result[0]).to.deep.equal({ id: 1, name: 'Martelo de Thor' });
+  });
+
+  it('Testando a função deleteDbProducts', async () => {
+    const result = await productsModel.deleteDbProducts('Martelo do Thor');
+    expect(result[0]).to.deep.equal({ id: 1, name: 'Martelo de Thor' });
+  });
+
+  it('Testando a função readDbProductsByName', async () => {
+    const result = await productsModel.readDbProductsByName('Martelo');
+    expect(result[0]).to.deep.equal({ id: 1, name: 'Martelo de Thor' });
+  });
 })
