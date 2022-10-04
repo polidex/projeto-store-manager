@@ -4,13 +4,18 @@
     "colId": "history",
     "containerId": "",
     "name": "store_manager",
-    "url": "http://localhost:3000/products",
-    "method": "GET",
+    "url": "http://localhost:3000/sales",
+    "method": "POST",
     "sortNum": 0,
     "created": "2022-09-22T18:41:47.289Z",
-    "modified": "2022-10-03T16:17:00.742Z",
+    "modified": "2022-10-04T18:22:45.713Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "form": []
+    },
     "tests": []
   }
 ]

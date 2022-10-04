@@ -1,14 +1,13 @@
-/* const salesService = require('../services/sales.service');
+const salesService = require('../services/sales.service');
 
 const addSales = async (req, res) => {
   const sales = req.body;
-  const { type, message } = await salesService.postDbSales(sales);
 
-  if (type) return res.status(type).json(message);
-
-  return res.status(201).json(message);
+  const salesAdd = await salesService.postDbSales(sales);
+  console.log(salesAdd);
+  return res.status(201).json(salesAdd[0]);
 };
 
 module.exports = {
   addSales,
-}; */
+};
