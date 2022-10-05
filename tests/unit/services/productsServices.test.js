@@ -6,7 +6,7 @@ const productsService = require('../../../src/services/products.service')
 
 describe('Testes unitarios do endpoint "/products" camada service', () => {
   
-  it('Testando a função getProducts', async () => {
+  it('Testando a função getDbProducts', async () => {
     sinon.stub(productsModel, 'readDbProducts').resolves(mock);
     const result = await productsService.getDbProducts(mock);
     expect(result).to.deep.equal(mock);

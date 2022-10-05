@@ -21,7 +21,7 @@ describe('Testes unitarios do endpoint "/products" camada model', () => {
 
   it('Testando a função readDbProductsById', async () => {
     const result = await productsModel.readDbProductsById(1);
-    expect(result[0]).to.deep.equal({ id: 1, name: 'Martelo de Thor' });
+    expect(result).to.deep.equal({ id: 1, name: 'Martelo de Thor' });
   });
 
   it('Testando a função createDbProducts', async () => {

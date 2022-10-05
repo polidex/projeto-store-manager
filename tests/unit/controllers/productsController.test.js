@@ -6,7 +6,7 @@ const productsController = require('../../../src/controllers/products.controller
 
 describe('Testes unitarios do endpoint "/products" camada  controller', () => {
   
-    const res = {};
+  const res = {};
   const req = {
     params: { id: 1 },
     body: { name: 'Martelo de Thor' },
