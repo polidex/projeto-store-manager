@@ -19,6 +19,16 @@ salesRouter.get('/', salesController.listSales);
 
 salesRouter.get('/:id', hasSale, salesController.listSalesById);
 
+salesRouter.put(
+  '/:id',
+  hasProductId,
+  hasQuantity,
+  minSaleQuantity,
+  productIdExists,
+  hasSale,
+  salesController.modifySales,
+);
+
 salesRouter.delete('/:id', hasSale, salesController.removeSales);
 
 module.exports = salesRouter;

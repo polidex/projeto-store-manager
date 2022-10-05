@@ -21,9 +21,16 @@ const deleteDbsales = async (id) => {
   return salesDelete;
 };
 
+const putDbSales = async (id, sales) => {
+  await salesModel.deleteDbsales(id);
+  await salesModel.createSalesProducts(sales, id);
+  return { saleId: id, itemsUpdated: sales };
+};
+
 module.exports = {
   postDbSales,
   getDbSales,
   getDbSalesById,
   deleteDbsales,
+  putDbSales,
 };

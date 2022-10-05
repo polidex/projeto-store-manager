@@ -31,9 +31,18 @@ const removeSales = async (req, res) => {
   return res.status(204).end();
 };
 
+const modifySales = async (req, res) => {
+  const { id } = req.params;
+  const sales = req.body;
+  
+  const salesModify = await salesService.putDbSales(id, sales);
+  return res.status(200).json(salesModify);
+};
+   
 module.exports = {
   addSales,
   listSales,
   listSalesById,
   removeSales,
+  modifySales,
 };
