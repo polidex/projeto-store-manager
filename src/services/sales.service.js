@@ -6,6 +6,18 @@ const postDbSales = async (sale) => {
   return saleId;
 };
 
+const getDbSales = async () => {
+  const listSales = await salesModel.readDbSales();
+  return listSales;
+};
+
+const getDbSalesById = async (id) => {
+  const listSalesById = await salesModel.readDbSalesById(id);
+  return listSalesById;
+};
+
 module.exports = {
   postDbSales,
+  getDbSales,
+  getDbSalesById,
 };

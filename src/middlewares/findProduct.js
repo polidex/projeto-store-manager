@@ -7,6 +7,6 @@ const findProduct = async (req, res, next) => {
   if (!result) {
     return res.status(404).json({ message: 'Product not found' });
   }
-  next();
+  return -next();
 };
 module.exports = findProduct;
