@@ -24,8 +24,16 @@ const listSalesById = async (req, res) => {
   return res.status(200).json(salesListById);
 };
 
+const removeSales = async (req, res) => {
+  const { id } = req.params;
+
+  await salesService.deleteDbsales(id);
+  return res.status(204).end();
+};
+
 module.exports = {
   addSales,
   listSales,
   listSalesById,
+  removeSales,
 };

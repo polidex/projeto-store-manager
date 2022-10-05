@@ -33,9 +33,16 @@ const readDbSalesById = async (id) => {
   return result[0];
 };
 
+const deleteDbsales = async (id) => {
+  const query = 'DELETE FROM StoreManager.sales_products WHERE sale_id = (?)';
+  const result = await connection.execute(query, [id]);
+  return result[0];
+};
+
 module.exports = {
   createSales,
   createSalesProducts,
   readDbSales,
   readDbSalesById,
+  deleteDbsales,
 };
