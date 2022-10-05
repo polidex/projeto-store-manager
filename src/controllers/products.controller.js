@@ -9,7 +9,7 @@ const listProductsById = async (req, res) => {
   const { id } = req.params;
 
   const productsListById = await productsService.getDbProductsById(id);
-  return res.status(200).json(productsListById[0]);
+  return res.status(200).json(productsListById);
 };
 
 const addProducts = async (req, res) => {

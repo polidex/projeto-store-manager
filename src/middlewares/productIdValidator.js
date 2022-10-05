@@ -1,18 +1,25 @@
+const productsModel = require('../models/products.model');
+
 const hasProductId = (req, res, next) => {
-  const { productId } = req.body;
-
-  if (!productId) res.status(400).json({ message: '"productId" is required' });
-
-  next();
-};
-
-const productIdExists = (req, res, next) => {
   const sales = req.body;
 
-  if (sales.some(({ productId }) => productId === undefined)) {
-    res.status(404).json({ message: 'Product not found' });
-  }
-  next();
+  const result = sales.some(({ productId }) => productId === undefined);
+  if (result) return res.status(400).json({ message: '"productId" is required' });
+
+  return next();
+};
+
+const productIdExists = async (req, res, next) => {
+  const sales = req.body;
+
+  const findId = await Promise.all(
+    sales.map(({ productId }) => productsModel.readDbProductsById(productId)),
+    );
+    console.log(findId);
+
+  const result = findId.some((product) => !product);
+  if (result) return res.status(404).json({ message: 'Product not found' });
+  return next();
 };
 
 module.exports = {

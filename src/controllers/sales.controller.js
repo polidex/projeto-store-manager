@@ -5,7 +5,10 @@ const addSales = async (req, res) => {
 
   const salesAdd = await salesService.postDbSales(sales);
   console.log(salesAdd);
-  return res.status(201).json(salesAdd[0]);
+  return res.status(201).json({
+    id: salesAdd,
+    itemsSold: sales,
+  });
 };
 
 module.exports = {
